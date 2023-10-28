@@ -23,8 +23,9 @@
     margin-left: -137px;
     width: 267px;
     height: 155px;
-    background: url(./src/images/瞬间.jpg) no-repeat;
-    background-size: 106%;
+    background: url(./src/images/瞬间0.jpg) no-repeat;
+    background-size: 100%;
+	background-position: center;
     z-index: 11;
     border: solid 5px #7a01be;
     -webkit-border-radius: 20px;
@@ -121,7 +122,7 @@
 			<p class="loading-text">努力加载中...</p>
 		</section>
 		<!-- end loading -->
-		<a href="javascript:;" class="playBgMusic animate-notifylight" id="j-playBgMusic">进入</a>
+		<a href="javascript:;" class="playBgMusic animate-notifylight" id="j-playBgMusic" onclick="excute_img()">进入</a>
 	</section>
 
 	<section class="page out">
@@ -142,7 +143,7 @@
 				<i class="img-glove animate-gloveSwing"></i>
 			</div>
 	
-			<div class="wukong j-banner opacity0 animated">
+			<div class="wukong j-banner opacity0 animated" id="photo_with_xinyu">
 				<!-- animate class show -->
 				<!-- <span class="textMask mask1 j-textmask1"><i class="transition"></i></span>
 				<span class="textMask mask2 j-textmask2"><i class="transition"></i></span>
@@ -182,6 +183,27 @@
 	
 	<!-- for pro -->
 	<script src="dist/js/app.js"></script>
+
+	<script>
+		var total = 0
+		function change_img() {
+			index = total  % 12
+			console.log('url("src/images/瞬间' + index + '.jpg');
+			var img = document.getElementById('photo_with_xinyu')
+			img.style.backgroundImage = 'url("src/images/瞬间' + index + '.jpg'
+			total = total + 1
+		}
+
+		function excute_img(){
+			setTimeout(function (){
+				var intervalId = setInterval(change_img, 10000);
+			}, 10000);
+		}
+
+
+
+	</script>
+
 	<script>
 	ISPRO=true;
 	</script>
