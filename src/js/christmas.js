@@ -90,8 +90,15 @@ $(function(){
 		path+'/images/bag.png',
 		path+'/images/sprite_gifts.png',
 		path+'/images/glove.png',
-		path+'/images/banner.png'
+		path+'/images/banner.png',
 	];
+
+	for(var i = 0; i < 16; i++){
+		preload.imgs.push(path + '/images/瞬间' + i + '.jpg')
+
+	}
+	console.log(preload.imgs)
+
 	preload.loadedPer=0;//已经加载的百分比
 	preload.eachItemPer=100/preload.imgs.length;//每个加载项的百分比
 	//加载图片
